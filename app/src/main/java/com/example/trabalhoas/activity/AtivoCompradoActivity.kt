@@ -66,6 +66,8 @@ class AtivoCompradoActivity : AppCompatActivity() {
                     result.last.toString()
                 val variacao = variacao(ativo.valor, result.high.toString().toDouble())
                 txtVariacao.text = "$variacao"+"%"
+                val lucro = lucro(ativo.qtd, ativo.total, result.high)
+                txtLucro.text = lucro
             }
 
             asyncTask = null
@@ -93,5 +95,15 @@ class AtivoCompradoActivity : AppCompatActivity() {
         return df.format(result)
     }
 
+    fun lucro(qtd: Double, total: Double, preco:Double):String{
+        val result = qtd*preco
+        val lucro = total-result
+        if(lucro<=total){
+            lucro*-1
+            return lucro.toString()
+        }else{
+        return lucro.toString()
+        }
+    }
 
 }
