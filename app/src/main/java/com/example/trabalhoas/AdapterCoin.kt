@@ -18,6 +18,7 @@ class AdapterCoin(private val coins: List<ListCoins>):
         vh.itemView.setOnClickListener {
             val coin = coins[vh.adapterPosition]
             val intent = Intent(v.context, CompraCoinActivity::class.java)
+            intent.putExtra("nome", coin.name)
             intent.putExtra("apelido", coin.apelido)
             v.context.startActivities(arrayOf(intent))
         }
