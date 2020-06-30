@@ -82,7 +82,7 @@ class AtivoCompradoActivity : AppCompatActivity() {
 
     fun variacao(vf: Double, vi: Double ): CharSequence? {
         val result = ((vf/vi)-1)*100
-        val variacao = result*100
+        val variacao = result*100*-1
         val df = DecimalFormat("#.##")
         df.roundingMode = RoundingMode.CEILING
         return df.format(variacao)
@@ -98,11 +98,12 @@ class AtivoCompradoActivity : AppCompatActivity() {
     fun lucro(qtd: Double, total: Double, preco:Double):String{
         val result = qtd*preco
         val lucro = total-result
-        if(lucro<=total){
-            lucro*-1
-            return lucro.toString()
+        if(total<=result){
+            val aux = lucro * -1
+            return aux.toString()
         }else{
-        return lucro.toString()
+            val aux = lucro * -1
+            return aux.toString()
         }
     }
 
