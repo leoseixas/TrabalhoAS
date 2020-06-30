@@ -9,4 +9,17 @@
         <item>Ethereum</item>
         <item>USD Coin</item>
     </string-array>
+    <string name="valor">Valor:</string>
+    <string name="name">Nome:</string>
+    <string name="qtd">Quantidade:</string>
+    <string name="dataCompra">Data da compra:</string>
+    <string name="variacao">Variação:</string>
+    <string name="lucro">Lucro:</string>
+    <string name="remove">Remover</string>
+    <string name="valorMoeda">Valor da moeda:</string>
+    <string name="data">Data:</string>
+    <string name="buy">Comprar</string>
+    <string name="addMoeda">Adicionar Moeda</string>
+    <string name="listMoeda">Lista de moedas</string>
+    <string name="escolha">Escolha uma moeda</string>
 </resources>
