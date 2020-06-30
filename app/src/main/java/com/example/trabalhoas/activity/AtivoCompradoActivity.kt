@@ -81,8 +81,8 @@ class AtivoCompradoActivity : AppCompatActivity() {
     }
 
     fun variacao(vf: Double, vi: Double ): CharSequence? {
-        val result = ((vf/vi)-1)*100
-        val variacao = result*100
+        val variacao = (vf/vi-1)*100
+
         val df = DecimalFormat("#.##")
         df.roundingMode = RoundingMode.CEILING
         return df.format(variacao)
