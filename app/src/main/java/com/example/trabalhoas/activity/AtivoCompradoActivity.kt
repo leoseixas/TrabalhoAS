@@ -64,7 +64,7 @@ class AtivoCompradoActivity : AppCompatActivity() {
         private fun update(result: Coin?){
             if(result != null){
                     result.last.toString()
-                val variacao = variacao(ativo.valor, result.high.toString().toDouble())
+                val variacao = variacao(result.high.toString().toDouble(), ativo.valor)
                 txtVariacao.text = "$variacao"+"%"
                 val lucro = lucro(ativo.qtd, ativo.total, result.high)
                 txtLucro.text = lucro
@@ -82,7 +82,7 @@ class AtivoCompradoActivity : AppCompatActivity() {
 
     fun variacao(vf: Double, vi: Double ): CharSequence? {
         val result = ((vf/vi)-1)*100
-        val variacao = result*100*-1
+        val variacao = result*100
         val df = DecimalFormat("#.##")
         df.roundingMode = RoundingMode.CEILING
         return df.format(variacao)
